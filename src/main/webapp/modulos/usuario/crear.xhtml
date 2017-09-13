@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      >
+    <body>
+	    <ui:composition>
+
+			<div class="panel-body">
+				<h:form>
+					<h:panelGrid columns="3">
+		
+		<!-- 			   <h:outputLabel for="id">ID:</h:outputLabel> -->
+		<!-- 			   <h:inputText value="#{usuarioBean.id}" id="id"></h:inputText> -->
+						<br />
+						<br />
+						
+						<h:outputLabel for="nombre">Nombre:</h:outputLabel>
+						<h:inputText value="#{usuarioBean.nombre}" id="nombre"></h:inputText>
+						<br />
+						<br />
+						
+						<h:outputLabel for="apellido">apellido:</h:outputLabel>
+						<h:inputText value="#{usuarioBean.apellido}" id="apellido"></h:inputText>
+						<br />
+						<br />
+		
+						<h:outputLabel for="eMail">E-Mail:</h:outputLabel>
+						<h:inputText value="#{usuarioBean.email}" id="eMail"></h:inputText>
+						<br />
+						<br />
+		
+						<h:outputLabel for="contraseña">Contraseña:</h:outputLabel>
+						<h:inputSecret value="#{usuarioBean.contraseña}" id="contraseña"></h:inputSecret>
+						<br />
+						<br />
+		
+						<h:commandButton action="#{usuarioBean.save}" value="Guardar">
+						</h:commandButton>
+						
+					</h:panelGrid>
+				</h:form>
+			</div>
+
+	    </ui:composition>
+    </body>
+</html>

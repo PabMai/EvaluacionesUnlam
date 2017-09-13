@@ -44,7 +44,7 @@ public class UsuarioBean implements Serializable {
 		
 		service.save(person);
 		
-		return "welcome";
+		return "/modulos/usuario/lista.xhtm";
 	}
 	
 	public List<Usuario> getFindAll() {
@@ -61,7 +61,7 @@ public class UsuarioBean implements Serializable {
 		Usuario logueado = service.login(usuario);		
 		if(logueado!=null) 
 		{
-			return "welcome";			
+			return "/templates/panel/panel.xhtml";
 		}
 		else
 		{
