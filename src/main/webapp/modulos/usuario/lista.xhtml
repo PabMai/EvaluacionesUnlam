@@ -5,52 +5,51 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
+
       >
     <body>
 	    <ui:composition>
-
-		<h1>Lista</h1>
-			
-		<h:dataTable value="#{usuarioBean.findAll}" var="usuario"
-				styleClass="order-table" headerClass="order-table-header"
-				rowClasses="order-table-odd-row,order-table-even-row">
-		
-				<h:column>
-					<f:facet name="header">Nombre</f:facet>    				
-		      		#{usuario.nombre}
-		  		 </h:column>
-		
-				<h:column>
-					<f:facet name="header">Apellido</f:facet>
-		      		#{usuario.apellido}
-		   		</h:column>
-		
-				<h:column>
-					<f:facet name="header">Email</f:facet>
-		    	  	#{usuario.email}
-			   </h:column>
-		
-			</h:dataTable>	
-			
-		<h:form>
-			<h:outputLabel value="#{usuarioBean.nombre}" />
-			<br />
-			<br />
-			<h:outputLabel value="#{usuarioBean.apellido}" />
-			<br />
-			<br />
-			<h:outputLabel value="#{usuarioBean.email}" />
-			<br />
-			<br />
-			<h:commandButton value="Crear usuario" action="/modulos/usuario/crear.xhtml" >
-		        <f:ajax render="@form" />
-			</h:commandButton>
-		</h:form>
-
-	<br />
-	<br />
-
-			
+		<div class="panel panel-default">
+  		<!-- Default panel contents -->
+  			<div class="panel-heading">
+  				<h4>Lista de usuarios</h4>
+  			</div>
+  				<h:form>
+				<h:dataTable value="#{usuarioBean.findAll}" var="usuario"
+						styleClass="table" headerClass="panel-body">
+						
+						<h:column>
+							<f:facet name="header">ID</f:facet>    				
+				      		#{usuario.id}
+				  		 </h:column>
+						
+						<h:column>
+							<f:facet name="header">Nombre</f:facet>    				
+				      		#{usuario.nombre}
+				  		 </h:column>
+				
+						<h:column>
+							<f:facet name="header">Apellido</f:facet>
+				      		#{usuario.apellido}
+				   		</h:column>
+				
+						<h:column>
+							<f:facet name="header">Email</f:facet>
+				    	  	#{usuario.email}
+					   </h:column>
+					  
+						<h:column>
+							<h:commandButton styleClass="btn btn-primary" action="#{usuario.edit}" value="Editar">
+							</h:commandButton>
+						</h:column>
+						<h:column>
+								<h:commandButton styleClass="btn btn-danger" action="#{usuarioBean.delete(usuario.id)}" value="Eliminar">
+                           		</h:commandButton> 
+						</h:column>
+						
+				</h:dataTable>
+				</h:form>
+			</div>		
 
 	    </ui:composition>
     </body>

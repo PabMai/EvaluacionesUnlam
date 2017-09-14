@@ -9,5 +9,5 @@ public interface UsuarioDao {
 	public List<Usuario> findAll();
 	public Usuario login(Usuario usuario);
 	public void save(Usuario usuario);
-
+	public void delete(Integer id);
 }

@@ -47,6 +47,13 @@ public class UsuarioBean implements Serializable {
 		return "/modulos/usuario/lista.xhtm";
 	}
 	
+	public String delete(Integer id){
+		
+		this.service.delete(id);
+		
+		return "/modulos/usuario/lista.xhtm";
+	}
+	
 	public List<Usuario> getFindAll() {
 		List<Usuario> list = service.findAll();
 		return list;
@@ -80,7 +87,7 @@ public class UsuarioBean implements Serializable {
 		
 		return usuario;
 	}
-
+	
 	public String getEmail() {
 		return eMail;
 	}

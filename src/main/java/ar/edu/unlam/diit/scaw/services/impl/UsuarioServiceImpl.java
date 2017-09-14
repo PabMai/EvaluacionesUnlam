@@ -34,6 +34,10 @@ public class UsuarioServiceImpl implements UsuarioService {
 	@Override
 	public void save(Usuario usuario) {
 		this.usuarioHsql.save(usuario);
-		
+	}
+	
+	@Override
+	public void delete(Integer id){
+		this.usuarioHsql.delete(id);
 	}
 }

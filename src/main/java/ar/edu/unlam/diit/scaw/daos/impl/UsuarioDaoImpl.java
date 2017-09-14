@@ -106,4 +106,22 @@ public class UsuarioDaoImpl implements UsuarioDao {
 			e.printStackTrace();
 		}		
 	}
+	
+	@Override
+	public void delete(Integer id) {
+		try {
+			conn = (dataSource.dataSource()).getConnection();
+		
+			Statement query;
+			
+			query= conn.createStatement();
+				
+			query.executeUpdate("UPDATE Usuarios Set idEstadoUsuario='4' Where id='"+ id +"'");
+						
+			conn.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+	}
 }

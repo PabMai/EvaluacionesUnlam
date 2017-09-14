@@ -8,30 +8,40 @@
 
     <h:head>
 		<title>Administracion</title>
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link href="../../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+		<link href="../../css/style.css" rel="stylesheet" type="text/css"/>
+
     </h:head>
+	
 
     <h:body>
 
-		<div id="panel">
-	
-		    <div id="header">
-			<ui:insert name="header" >
-			  <ui:include src="/modulos/componentes/header.xhtml" />
-			</ui:insert>
+		<div class="container-fluid">
+			<div class="row">
+			    <div class="col-md-12">
+				    <div id="header">
+						<ui:insert name="header" >
+						  <ui:include src="/modulos/componentes/header.xhtml" />
+						</ui:insert>
+				    </div>
+				</div>
 		    </div>
-		    
-		    <div id="menu">
-		  	<ui:insert name="menu" >
-		 	  <ui:include src="/modulos/componentes/menu.xhtml" />
-		   	</ui:insert>
-		    </div>
-	
-		    <div id="content">
-		  	<ui:insert name="content" >
-		 	  <ui:include src="/modulos/usuario/lista.xhtml" />
-		   	</ui:insert>
-		    </div>
+		    <div class="row">
+		    	<div class="col-md-3">
+				    <div id="menu">
+				  	<ui:insert name="menu" >
+				 	  <ui:include src="/modulos/componentes/menu.xhtml" />
+				   	</ui:insert>
+				    </div>
+				</div>
+				<div class="col-md-9">
+				    <div id="content">
+				  	<ui:insert name="content" >
+				 	  <ui:include src="/modulos/usuario/lista.xhtml" />
+				   	</ui:insert>
+				    </div>
+				</div>
+			 </div>
 		</div>
     </h:body>
 </html>
