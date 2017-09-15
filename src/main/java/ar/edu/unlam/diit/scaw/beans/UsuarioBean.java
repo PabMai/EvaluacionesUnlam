@@ -21,7 +21,6 @@ public class UsuarioBean implements Serializable {
 	private String apellido = null;
 	private String nombre = null;
 	
-	
 	UsuarioService service;
 	
 	public UsuarioBean() {
@@ -54,6 +53,11 @@ public class UsuarioBean implements Serializable {
 		return "/modulos/usuario/lista.xhtm";
 	}
 	
+	public String editUsuario(Usuario usuario){
+		
+	    return "/modulos/usuario/edit.xhtm";
+   }
+		
 	public List<Usuario> getFindAll() {
 		List<Usuario> list = service.findAll();
 		return list;
@@ -140,5 +144,6 @@ public class UsuarioBean implements Serializable {
 		return serialVersionUID;
 	}
 
+	
 
 }

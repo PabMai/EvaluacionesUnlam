@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+
+      >
+    <body>
+	    <ui:composition>
+		<div class="panel panel-default">
+  		<!-- Default panel contents -->
+  			<div class="panel-heading">
+  				<h4>Lista de usuarios</h4>
+  			</div>
+  				<h:form>
+				<h:dataTable value="#{usuarioBean.buildUsuario}" var="usuario"
+						styleClass="table" headerClass="panel-body">
+											
+						<h:column>
+							<f:facet name="header">Nombre</f:facet>
+							<h:inputText value="#{usuarioBean.nombre}" id="nombre">#{usuario.nombre}</h:inputText>		
+				  		 </h:column>
+				
+						<h:column>
+							<f:facet name="header">Apellido</f:facet>
+				      		<h:inputText value="#{usuarioBean.nombre}" id="nombre">#{usuario.apellido}</h:inputText>	
+				   		</h:column>
+				
+						<h:column>
+							<f:facet name="header">Email</f:facet>
+				    	  	<h:inputText value="#{usuarioBean.nombre}" id="nombre">#{usuario.email}</h:inputText>	
+					   </h:column>						
+				</h:dataTable>
+				
+				<h:commandButton value="Actualizar" action="lista" >
+	       			 <f:ajax render="@form" />
+				</h:commandButton>
+				
+				</h:form>
+			</div>		
+
+	    </ui:composition>
+    </body>
+</html>

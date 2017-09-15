@@ -38,13 +38,17 @@
 				    	  	#{usuario.email}
 					   </h:column>
 					  
+<!-- 						<h:column> -->
+<!-- 							<h:commandButton styleClass="btn btn-primary" action="#{usuario.edit}" value="Editar"> -->
+<!-- 							</h:commandButton> -->
+<!-- 						</h:column> -->
 						<h:column>
-							<h:commandButton styleClass="btn btn-primary" action="#{usuario.edit}" value="Editar">
-							</h:commandButton>
-						</h:column>
+				            <h:commandButton value="Editar" styleClass="btn btn-primary" action="#{usuarioBean.editUsuario(usuario)}">
+				            </h:commandButton>
+				         </h:column>
 						<h:column>
-								<h:commandButton styleClass="btn btn-danger" action="#{usuarioBean.delete(usuario.id)}" value="Eliminar">
-                           		</h:commandButton> 
+							<h:commandButton styleClass="btn btn-danger" action="#{usuarioBean.delete(usuario.id)}" value="Eliminar">
+                           	</h:commandButton> 
 						</h:column>
 						
 				</h:dataTable>

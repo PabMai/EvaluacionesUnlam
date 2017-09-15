@@ -10,4 +10,5 @@ public interface UsuarioDao {
 	public Usuario login(Usuario usuario);
 	public void save(Usuario usuario);
 	public void delete(Integer id);
+	public void update(Usuario usuario);
 }

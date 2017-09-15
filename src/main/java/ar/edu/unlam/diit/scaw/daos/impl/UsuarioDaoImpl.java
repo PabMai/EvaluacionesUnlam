@@ -124,4 +124,22 @@ public class UsuarioDaoImpl implements UsuarioDao {
 		}
 		
 	}
+	
+	public void update(Usuario usuario){
+		try {
+			conn = (dataSource.dataSource()).getConnection();
+		
+			Statement query;
+			
+			query= conn.createStatement();
+				
+			query.executeUpdate("UPDATE Usuarios SET " + usuario.getEmail() + "', '" + usuario.getContraseña() + "', '" + usuario.getApellido()+ "', '" + usuario.getNombre() + "', WHERE id=" + usuario.getId() + ";");
+						
+			conn.close();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+	}
 }
