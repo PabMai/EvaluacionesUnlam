@@ -6,21 +6,26 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
       >
+
     <body>
 	    <ui:composition template="/templates/panel/panel.xhtml">
 	    <ui:define name="content">
 		<div class="panel panel-default">
   		<!-- Default panel contents -->
   			<div class="panel-heading">
-  				<h4>Actualizar usuarios</h4>
+  				<h4>Actualizar usuario</h4>
   			</div>
   				<h:form>
-				<h:dataTable value="usuarioBean.findAll" var="editUsuario"
+  				  <h:outputLabel id="txtNombre" value="#{usuarioBean.nombre}"/> 
+				<h:dataTable 
 						styleClass="table" headerClass="panel-body">
 											
 						<h:column>
 							<f:facet name="header">Nombre</f:facet>
-							<h:inputText value="#{usuarioBean.nombre}" id="nombre">#{editUsuario.nombre}</h:inputText>		
+							<h:inputText id="nombre">
+<!-- 								 <f:param value="#{editNombre}" /> -->
+								#{usuario.nombre}
+							</h:inputText>		
 				  		 </h:column>
 				
 						<h:column>

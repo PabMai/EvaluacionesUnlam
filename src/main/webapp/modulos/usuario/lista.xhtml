@@ -44,7 +44,10 @@
 <!-- 						</h:column> -->
 						<h:column>
 <!-- 							<h:link value="editar" outcome="editar.xhtml" /> -->
-				            <h:commandButton value="Editar" styleClass="btn btn-primary" action="editar.xhtml" />
+				            <h:commandButton value="Editar" styleClass="btn btn-primary" action="#{usuarioBean.editUsuario(usuario.id)}" >
+<!--  									<f:setPropertyActionListener value="#{usuario}" target="#{usuarioBean.selectedUser}" /> -->
+									
+				            </h:commandButton>
 				         </h:column>
 						<h:column>
 							<h:commandButton styleClass="btn btn-danger" action="#{usuarioBean.delete(usuario.id)}" value="Eliminar">

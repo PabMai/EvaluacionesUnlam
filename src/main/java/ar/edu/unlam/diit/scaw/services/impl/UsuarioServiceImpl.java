@@ -42,7 +42,12 @@ public class UsuarioServiceImpl implements UsuarioService {
 	}
 	
 	@Override
-	public void update(Usuario usuario){
-		this.usuarioHsql.update(usuario);
+	public List<Usuario> edit(Integer id){
+		return usuarioHsql.edit(id);
 	}
+	
+//	@Override
+//	public void update(Usuario usuario){
+//		this.usuarioHsql.update(usuario);
+//	}
 }

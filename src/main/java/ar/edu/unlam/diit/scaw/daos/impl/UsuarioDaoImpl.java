@@ -125,21 +125,58 @@ public class UsuarioDaoImpl implements UsuarioDao {
 		
 	}
 	
-	public void update(Usuario usuario){
+	public List<Usuario> edit(Integer idUsuario){
+		List<Usuario> ll = new LinkedList<Usuario>();
+		
 		try {
 			conn = (dataSource.dataSource()).getConnection();
-		
+			
 			Statement query;
 			
 			query= conn.createStatement();
-				
-			query.executeUpdate("UPDATE Usuarios SET " + usuario.getEmail() + "', '" + usuario.getContraseña() + "', '" + usuario.getApellido()+ "', '" + usuario.getNombre() + "', WHERE id=" + usuario.getId() + ";");
-						
+			
+			ResultSet rs = query.executeQuery("SELECT * FROM Usuarios WHERE id = '"+idUsuario+"';");
+			
+			while (rs.next()) {
+			  
+				Integer id = rs.getInt("id");
+				String eMail = rs.getString("eMail");
+				String apellido = rs.getString("apellido");
+				String nombre = rs.getString("nombre");
+			  
+				Usuario usuario = new Usuario();
+				usuario.setEmail(eMail);
+				usuario.setId(id);
+				usuario.setApellido(apellido);
+				usuario.setNombre(nombre);
+	
+				ll.add(usuario);
+			}
+			
 			conn.close();
 			
-		} catch (SQLException e) {
+		}catch (SQLException e) {
 			e.printStackTrace();
-		}
+		}	
 		
+		return ll;
 	}
+	
+//	public void update(Usuario usuario){
+//		try {
+//			conn = (dataSource.dataSource()).getConnection();
+//		
+//			Statement query;
+//			
+//			query= conn.createStatement();
+//				
+//			query.executeUpdate("UPDATE Usuarios SET " + usuario.getEmail() + "', '" + usuario.getContraseña() + "', '" + usuario.getApellido()+ "', '" + usuario.getNombre() + "', WHERE id=" + usuario.getId() + ";");
+//						
+//			conn.close();
+//			
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		}
+//		
+//	}
 }

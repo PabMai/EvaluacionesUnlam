@@ -22,7 +22,7 @@ public class UsuarioBean implements Serializable {
 	private String nombre = null;
 	
 	UsuarioService service;
-	
+
 	public UsuarioBean() {
 		super();
 		service = (UsuarioService) new UsuarioServiceImpl();
@@ -53,11 +53,29 @@ public class UsuarioBean implements Serializable {
 		return "/modulos/usuario/lista.xhtm";
 	}
 	
-//	public String editUsuario(Usuario usuario){
+	private Usuario selectedUser;
+	
+	public void setSelectedUser(Usuario selectedUser) {
+		this.selectedUser = selectedUser;
+	}
+ 
+	public Usuario getSelectedUser() {
+		return selectedUser;
+	}
+	
+	public String editUsuario(Usuario usuario){
+		
+	
+		this.service.edit(id);
+//		Usuario usuario = new Usuario();
 //		
-//	    return "/modulos/usuario/editar.xhtm";
-//   }
-//		
+//		usuario.setEmail(this.nombre);
+//		usuario.setContraseña(this.apellido);	
+//		usuario.setEmail(this.eMail);
+		
+	    return "/modulos/usuario/editar.xhtml";
+   }
+		
 	public List<Usuario> getFindAll() {
 		List<Usuario> list = service.findAll();
 		return list;
