@@ -53,11 +53,11 @@ public class UsuarioBean implements Serializable {
 		return "/modulos/usuario/lista.xhtm";
 	}
 	
-	public String editUsuario(Usuario usuario){
-		
-	    return "/modulos/usuario/edit.xhtm";
-   }
-		
+//	public String editUsuario(Usuario usuario){
+//		
+//	    return "/modulos/usuario/editar.xhtm";
+//   }
+//		
 	public List<Usuario> getFindAll() {
 		List<Usuario> list = service.findAll();
 		return list;

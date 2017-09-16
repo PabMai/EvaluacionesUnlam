@@ -3,6 +3,8 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
       >
     <body>
 	    <ui:composition>
@@ -13,8 +15,8 @@
 				  </div>
 				  <div class="panel-body">
 				    <ul class="nav nav-pills nav-stacked">
-					  <li><a href="/modulos/usuario/lista.xhtml">Listar</a></li>
-					  <li><a href="/modulos/usuario/crear.xhtml">Crear</a></li>
+					  <li><h:link value="Lista" outcome="/modulos/usuario/lista.xhtml" /></li>
+					  <li><h:link value="Crear" outcome="/modulos/usuario/crear.xhtml" /></li>
 					  <li><a href="#">Peticion</a></li>
 					</ul>
 				  </div>

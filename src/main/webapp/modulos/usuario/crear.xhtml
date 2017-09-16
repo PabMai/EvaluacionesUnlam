@@ -7,8 +7,8 @@
       xmlns:f="http://java.sun.com/jsf/core"
       >
     <body>
-	    <ui:composition>
-
+	    <ui:composition template="/templates/panel/panel.xhtml">
+			<ui:define name="content">
 			<div class="panel-body">
 				<h:form>
 					<h:panelGrid columns="3">
@@ -44,7 +44,7 @@
 					</h:panelGrid>
 				</h:form>
 			</div>
-
+			</ui:define>
 	    </ui:composition>
     </body>
 </html>

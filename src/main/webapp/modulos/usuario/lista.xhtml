@@ -5,10 +5,10 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
-
       >
     <body>
-	    <ui:composition>
+	    <ui:composition template="/templates/panel/panel.xhtml">
+	    <ui:define name="content">
 		<div class="panel panel-default">
   		<!-- Default panel contents -->
   			<div class="panel-heading">
@@ -43,8 +43,8 @@
 <!-- 							</h:commandButton> -->
 <!-- 						</h:column> -->
 						<h:column>
-				            <h:commandButton value="Editar" styleClass="btn btn-primary" action="#{usuarioBean.editUsuario(usuario)}">
-				            </h:commandButton>
+<!-- 							<h:link value="editar" outcome="editar.xhtml" /> -->
+				            <h:commandButton value="Editar" styleClass="btn btn-primary" action="editar.xhtml" />
 				         </h:column>
 						<h:column>
 							<h:commandButton styleClass="btn btn-danger" action="#{usuarioBean.delete(usuario.id)}" value="Eliminar">
@@ -54,7 +54,7 @@
 				</h:dataTable>
 				</h:form>
 			</div>		
-
+			</ui:define>
 	    </ui:composition>
     </body>
 </html>
